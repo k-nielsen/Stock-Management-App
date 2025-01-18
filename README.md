@@ -15,11 +15,11 @@ This application provides a simple interface for managing stock items. It includ
 1. Clone the repository
 
 2. Backend setup:
-- cd Stock-Management-App/server
-- dotnet restore
-- dotnet run
+    - cd Stock-Management-App/server
+    - dotnet restore
+    - dotnet run
 
 3. Frontend setup:
-- cd Stock-Management-App/client
-- npm install  // Or yarn install
-- npm start
+    - cd Stock-Management-App/client
+    - npm install  // Or yarn install
+    - npm start
