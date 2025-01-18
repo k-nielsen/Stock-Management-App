@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>{{ stockItem.id ? 'Edit Stock Item' : 'Create Stock Item' }}</h2>
+  <form (ngSubmit)="saveStock()" #stockForm="ngForm">
+    <div>
+      <label for="quantity">Quantity: </label>
+      <input type="number" id="quantity" name="quantity" [(ngModel)]="stockItem.quantity" required>
+    </div>
+    <div>
+      <label for="productNumber">Product #: </label>
+      <input type="text" id="productNumber" name="productNumber" [(ngModel)]="stockItem.productNumber" required>
+    </div>
+    <div>
+      <label for="location">Location: </label>
+      <input type="text" id="location" name="location" [(ngModel)]="stockItem.location" required>
+    </div>
+    <button type="submit" [disabled]="stockForm.invalid">
+      {{ stockItem.id ? 'Update' : 'Create' }}
+    </button>
+    <button type="button" [routerLink]="['/stock-list']">
+      Cancel
+    </button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+</div>
