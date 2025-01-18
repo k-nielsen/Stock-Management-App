@@ -17,9 +17,14 @@ namespace server.Data
       return _stockItems.ToList();
     }
 
-    public StockItem? GetById(int id)
+    public StockItem GetById(int id)
     {
-      return _stockItems.FirstOrDefault(item => item.Id == id);
+      var item = _stockItems.FirstOrDefault(item => item.Id == id);
+      if (item == null)
+      {
+        throw new Exception("Item not found");
+      }
+      return item;
     }
 
     public void Add(StockItem item)
@@ -30,30 +35,24 @@ namespace server.Data
 
     public void Update(StockItem updatedItem)
     {
-      int index = _stockItems.FindIndex(s => s.Id == updatedItem.Id);
-      if (index != -1) // Check if item exists
-      {
-        _stockItems[index] = updatedItem; //FIX - maybe change from record to class
-      }
-      else
+      var index = _stockItems.FindIndex(item => item.Id == updatedItem.Id);
+      if (index == -1)
       {
         throw new Exception("Item not found");
       }
+      _stockItems[index] = updatedItem;
+
     }
 
 
     public void Delete(int id)
     {
-      var existingItem = _stockItems.FirstOrDefault(s => s.Id == id);
-
-      if (existingItem != null)
-      {
-        _stockItems.Remove(existingItem);
-      }
-      else
+      var existingItem = _stockItems.FirstOrDefault(item => item.Id == id);
+      if (existingItem == null)
       {
         throw new Exception("Item not found");
       }
+      _stockItems.Remove(existingItem);
     }
   }
 }

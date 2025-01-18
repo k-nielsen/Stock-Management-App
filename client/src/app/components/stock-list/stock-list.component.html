@@ -2,6 +2,7 @@
   <h1>Stock list</h1>
   <button [routerLink]="['/stock-form']">Add New Stock</button>
   <input type="text" (keyup)="onKeyUp($event)" placeholder="Search...">
+  <p>Click on a coloumn header to sort by that column</p>
   <table>
     <thead>
       <tr>

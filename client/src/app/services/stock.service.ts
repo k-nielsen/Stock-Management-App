@@ -22,7 +22,7 @@ export class StockService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  getStockById(id: number): Observable<StockItem | undefined> {
+  getStockById(id: number): Observable<StockItem> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 

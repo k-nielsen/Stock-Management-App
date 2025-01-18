@@ -6,14 +6,11 @@ C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\ser
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\server.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\server.pdb
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\System.Text.Encodings.Web.dll
-C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\System.Text.Json.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\obj\Debug\net7.0\server.csproj.AssemblyReference.cache
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\obj\Debug\net7.0\server.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\obj\Debug\net7.0\server.AssemblyInfoInputs.cache
@@ -42,3 +39,4 @@ C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Mic
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\kaspe\Documents\Github\Stock-Management-App\server\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll

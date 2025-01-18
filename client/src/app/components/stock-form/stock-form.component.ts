@@ -24,7 +24,8 @@ export class StockFormComponent {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
+    const idParam = this.route.snapshot.params['id'];
+    const id = Number(idParam);
     if (id) {
       this.fetchStockData(id);
     }
@@ -32,7 +33,8 @@ export class StockFormComponent {
 
   fetchStockData(id: number) {
     this.stockService.getStockById(id).subscribe({
-      next: (stock: StockItem | undefined) => {
+      next: (stock: StockItem) => {
+        console.log("stock", stock);
         if (stock) {
           this.stockItem = stock;
           this.errorMessage = null;
@@ -41,9 +43,12 @@ export class StockFormComponent {
         }
       },
       error: (err) => {
-        this.errorMessage = "An error occurred while fetching stock data.";
-        console.error(err);
-        //... and more specific ones
+        if (err.status === 404)
+          this.errorMessage = "Stock not found.";
+        else {
+          this.errorMessage = "An error occurred while fetching stock data.";
+          console.error(err);
+        }
       }
     });
   }

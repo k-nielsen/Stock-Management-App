@@ -8,7 +8,7 @@ namespace server.Controllers
   [Route("api/[controller]")]
   public class StockController : ControllerBase
   {
-    private readonly StockService _stockService = new();
+    private readonly StockService _stockService;
     public StockController(StockService stockService)
     {
       _stockService = stockService;
@@ -24,12 +24,15 @@ namespace server.Controllers
     [HttpGet("{id}")]
     public ActionResult<StockItem> Get(int id)
     {
-      var item = _stockService.GetById(id);
-      if (item is null)
+      try
       {
-        return NotFound();
+        var item = _stockService.GetById(id);
+        return Ok(item);
       }
-      return Ok();
+      catch (Exception ex)
+      {
+        return NotFound(ex.Message);
+      }
     }
 
     [HttpPost]
@@ -40,16 +43,16 @@ namespace server.Controllers
     }
 
     [HttpPut("{id}")]
-    public ActionResult Update(int id, StockItem item)
+    public ActionResult Update(int id, StockItem updatedItem)
     {
-      if (id != item.Id)
+      if (id != updatedItem.Id)
       {
         return BadRequest("Id mismatch");
       }
       try
       {
-        _stockService.Update(item);
-        return Ok();
+        _stockService.Update(updatedItem);
+        return NoContent();
       }
       catch (Exception ex)
       {
@@ -64,7 +67,7 @@ namespace server.Controllers
       try
       {
         _stockService.Delete(id);
-        return Ok();
+        return NoContent();
       }
       catch (Exception ex)
       {
