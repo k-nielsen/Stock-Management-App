@@ -52,7 +52,7 @@ namespace server.Controllers
       try
       {
         _stockService.Update(updatedItem);
-        return NoContent();
+        return Ok(updatedItem);
       }
       catch (Exception ex)
       {

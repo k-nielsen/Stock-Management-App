@@ -27,11 +27,11 @@ export class StockFormComponent {
     const idParam = this.route.snapshot.params['id'];
     const id = Number(idParam);
     if (id) {
-      this.fetchStockData(id);
+      this.getStockById(id);
     }
   }
 
-  fetchStockData(id: number) {
+  getStockById(id: number) {
     this.stockService.getStockById(id).subscribe({
       next: (stock: StockItem) => {
         console.log("stock", stock);

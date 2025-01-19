@@ -10,7 +10,7 @@ export interface StockItem {
 }
 
 @Injectable({
-  providedIn: 'root' // Or provide in a shared module if not using standalone components
+  providedIn: 'root'
 })
 
 export class StockService {
@@ -18,7 +18,7 @@ export class StockService {
 
   constructor(private http: HttpClient) { }
 
-  getStock(): Observable<StockItem[]> {
+  getAllStock(): Observable<StockItem[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 

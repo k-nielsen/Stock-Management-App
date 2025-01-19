@@ -6,7 +6,7 @@ This application provides a simple interface for managing stock items. It includ
 
 ### Prerequisites
 
-* .NET SDK 6 (or latest).
+* .NET SDK 7 (or latest).
 * Node.js and npm (or yarn).
 * Angular CLI
 

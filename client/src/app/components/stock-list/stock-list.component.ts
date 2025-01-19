@@ -21,11 +21,11 @@ export class StockListComponent {
   constructor(private stockService: StockService) { }
 
   ngOnInit() {
-    this.loadStock();
+    this.refreshStockItems();
   }
 
-  loadStock() {
-    this.stockService.getStock().subscribe({
+  refreshStockItems() {
+    this.stockService.getAllStock().subscribe({
       next: (data) => {
         this.stockItems = data;
       },
@@ -42,7 +42,7 @@ export class StockListComponent {
   deleteStock(id: number) {
     this.stockService.deleteStock(id).subscribe({
       next: () => {
-        this.loadStock();
+        this.refreshStockItems();
       },
       error: (error) => {
         console.error('Error deleting stock:', error);
@@ -51,7 +51,7 @@ export class StockListComponent {
 
       },
       complete: () => {
-        this.idToDelete = null; // Close the modal
+        this.idToDelete = null;
       }
     });
   }
