@@ -20,13 +20,13 @@ export class StockListComponent {
 
   constructor(private stockService: StockService) { }
 
-  ngOnInit() {
+  ngOnInit() { // To fetch stock from backend on intial load
     this.refreshStockItems();
   }
 
   refreshStockItems() {
-    this.stockService.getAllStock().subscribe({
-      next: (data) => {
+    this.stockService.getAllStock().subscribe({ // Subscribing triggers the executing of the Observable
+      next: (data) => { // Is called when the Observable emits data succesfully
         this.stockItems = data;
       },
       error: (error) => {
@@ -63,14 +63,15 @@ export class StockListComponent {
       const aValue = a[field];
       const bValue = b[field];
 
+      // Null handling
       if (aValue == null && bValue == null) return 0;
       if (aValue == null) return 1;
       if (bValue == null) return -1;
 
       const comparison =
         typeof aValue === 'string' && typeof bValue === 'string'
-          ? aValue.localeCompare(bValue, undefined, { sensitivity: 'base' })
-          : aValue > bValue ? 1 : aValue < bValue ? -1 : 0;
+          ? aValue.localeCompare(bValue, undefined, { sensitivity: 'base' }) // String comparison
+          : aValue > bValue ? 1 : aValue < bValue ? -1 : 0; // Number comparison
 
       return this.sortDirection === 'desc' ? -comparison : comparison;
     });
